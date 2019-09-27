@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Posts from './components/Posts';
 import axios from 'axios';
 import './App.css';
-import { async } from 'q';
 
 function App() {
 
@@ -27,9 +27,11 @@ function App() {
     fetchPosts();
   }, []);
 
+  console.log(posts);
   return (
-    <div className="container">
-      <h1>App</h1>
+    <div className='container mt-5'>
+      <h1 className='text-primary mb-3'>App</h1>
+      <Posts posts={posts} loading={loading}/>
     </div>
   );
 }
